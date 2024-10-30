@@ -1,7 +1,7 @@
 "use client";
 import { db as database } from "./firebaseConfig";
 import { ref, push, onValue, get } from "firebase/database";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useUser } from "@clerk/nextjs";
 type Message = {
   receiverId: string;
@@ -95,7 +95,7 @@ const Chat = () => {
     <div>
       {!isReceiverSet ? (
         <div>
-          <h2>Enter Receiver's Email to Start Chat</h2>
+          <h2>Enter Receiver Email to Start Chat</h2>
           <input
             value={receiverEmail}
             onChange={(e) => setReceiverEmail(e.target.value)}
@@ -106,7 +106,7 @@ const Chat = () => {
       ) : (
         <div>
           <div style={{ height: "400px", overflowY: "scroll" }}>
-            {messages.map((msg: any, index) => (
+            {messages.map((msg: Message, index) => (
               <div key={index}>
                 <strong>{msg.senderName}:</strong> {msg.text}
               </div>

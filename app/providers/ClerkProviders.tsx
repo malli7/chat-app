@@ -4,8 +4,6 @@ import {
   RedirectToSignIn,
   SignedIn,
   SignedOut,
-  SignInButton,
-  UserButton,
 } from "@clerk/nextjs";
 import React from "react";
 

@@ -1,7 +1,7 @@
 "use client";
 import { db as database } from "../../firebaseConfig";
 import { ref, push, onValue, get, remove } from "firebase/database";
-import { useState, useRef, useEffect, useLayoutEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Send, ArrowLeft, MoreVertical } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
@@ -52,7 +52,7 @@ export default function Component() {
       setFriend(result.friends[0]);
     };
     getFriendDetails();
-  }, [user?.id]);
+  }, [user?.id,friendId]);
 
   useEffect(() => {
     if (friendId) {

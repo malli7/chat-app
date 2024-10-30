@@ -37,10 +37,7 @@ export default function ChatHome() {
   const [newFriendEmail, setNewFriendEmail] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
-  const handleSendFriendRequest = () => {
-    console.log("Sending friend request to:", newFriendEmail);
-    setNewFriendEmail("");
-  };
+  
 
   const filteredFriends = friends.filter(
     (friend) =>
